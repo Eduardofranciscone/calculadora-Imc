@@ -90,3 +90,30 @@ button:hover{
     user-select: none;
 }
 
+@media (max-width:400px){
+    main{
+        padding: 20px;
+    }
+}
+
+@media (max-width:360px){
+    .container{
+        padding: 20px;
+    }
+}
+
+@media (max-width:360px){
+    .container{
+        padding: 10px;
+    }
+}
+
+@media (max-width:320px){
+    .container{
+        padding: 5px;
+    }
+    .input{
+        width: 200px;
+        justify-content: center;
+    }
+}
