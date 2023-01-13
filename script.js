@@ -2,45 +2,57 @@
 const calcular = document.getElementById('calcular')
 
 
-function imc(){ 
-    const nome= document.getElementById('nome').value
-    const altura= document.getElementById('altura').value
+function imc() {
+    const nome = document.getElementById('nome').value
+    const altura = document.getElementById('altura').value
     const peso = document.getElementById('peso').value
-    const resultado= document.getElementById('resultado')
+    const resultado = document.getElementById('resultado')
 
-    if(nome !== '' && altura !== '' && peso !== ''){
-        
-        const valorImc= (peso / (altura*altura)).toFixed(2)
+    setTimeout(() => {
+        if (nome !== '' && altura !== '' && peso !== '') {
 
-        let classificacao=''
+            const valorImc = (peso / (altura * altura)).toFixed(2)
 
-        if (valorImc < 18.5){
-            classificacao='Abaixo do Peso'
+            let classificacao = ''
 
-        }else if(valorImc < 25){
-            classificacao='Seu peso está ideal'
+            if (valorImc < 18.5) {
+                classificacao = 'Abaixo do Peso'
 
-        }else if(valorImc < 30){
-            classificacao='Você está um pouco acima do peso'
+            } else if (valorImc < 25) {
+                classificacao = 'Seu peso está ideal'
 
-        }else if(valorImc < 35){
-            classificacao='Você está com obesidade gráu I'
+            } else if (valorImc < 30) {
+                classificacao = 'Você está um pouco acima do peso'
 
-        }else if(valorImc < 40){
-            classificacao='Você está com obesidade gráu II'
+            } else if (valorImc < 35) {
+                classificacao = 'Você está com obesidade gráu I'
 
-        }else{
-            classificacao='Você está com obesidade gráu III CUIDADO!!!'
+            } else if (valorImc < 40) {
+                classificacao = 'Você está com obesidade gráu II'
 
-        }
+            } else {
+                classificacao = 'Você está com obesidade gráu III CUIDADO!!!'
+            }
 
-        resultado.textContent=`${nome} seu IMC é: ${valorImc} e você está 
+            resultado.textContent = `${nome} seu IMC é: ${valorImc} e você está 
         ${classificacao}`
 
 
-    } else{
-        resultado.textContent='Preencha todos os campos'
-    }
+        } else {
+            resultado.textContent = 'Preencha todos os campos'
+        }
+        resetar()
+    }, 2000)
+    return resetarResultado()
+}
+function resetar(){
+    const nome = document.getElementById('nome').value=""
+    const altura = document.getElementById('altura').value=""
+    const peso = document.getElementById('peso').value=""
+}
+
+function resetarResultado(){
+    const resultado = document.getElementById('resultado').textContent = 'Preencha todos os campos'
 }
 
 calcular.addEventListener('click', imc)
