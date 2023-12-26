@@ -1,5 +1,7 @@
 
  <h1>Calculadora IMC</h1>
+ <p>Esta é uma simples calculadora de Índice de Massa Corporal (IMC) desenvolvida usando HTML, CSS e JavaScript. O IMC é uma medida comum usada para avaliar se uma pessoa está em um peso saudável em relação à sua altura.
+</p>
  <h2>Utilizei as tecnologias:</h2>
 <ul>
   <li>Html</li>
